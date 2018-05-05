@@ -24,8 +24,8 @@ class Books(models.Model):
 	genre = models.CharField(max_length=30, blank=False, default=GENRE_FICTION, choices=genre_choices)
 	date_reviewed = models.DateTimeField(default=None, blank=True, null=True)
 	is_favourite = models.BooleanField(default=False, verbose_name="Favourite")
-	# authors = models.ManyToManyField(Author)
-	# review = models.OneToManyField(Review)
+	authors = models.ManyToManyField("Author")
+	review = models.ForeignKey("Review", null=True)
 
 	def __unicode__(self):
 		return self.title + " " + self.author

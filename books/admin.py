@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from books.models import Books
+from books.models import *
 
 # Register your models here.
 admin.site.register(Books)
-# admin.site.register(Author)
-# admin.site.register(Review)
+admin.site.register(Author)
+admin.site.register(Review)
