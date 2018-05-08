@@ -39,6 +39,7 @@ class Books(models.Model):
 	authors = models.ManyToManyField("Author")
 	review = models.ForeignKey("Review", null=True)
 	status = models.CharField(max_length=20, blank=False, null=False, choices=status_choices, default=STATUS_WANT_TO_READ)
+	book_shelf = models.ForeignKey('BookShelf', null=True)
 
 	def __unicode__(self):
 		return self.title + " " + self.author
